@@ -1,44 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>Inventario de Tienda</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de productos</title>
 </head>
 <body>
 
-<h1>Sistema de Inventario</h1>
+<header>
+<h1>Sistema de inventario</h1>
+</header>
 
-<h2>Registro de productos</h2>
+<main>
+<section>
+<h2>Registrar producto</h2>
 
-<label>Nombre del producto:</label>
-<input type="text">
+<form action="#" method="post">
+<p>
+<label for="nombre">Nombre del producto:</label><br>
+<input type="text" id="nombre" name="nombre" required>
+</p>
 
-<br><br>
+<p>
+<label for="codigo">Código del producto:</label><br>
+<input type="text" id="codigo" name="codigo" required>
+</p>
 
-<label>Cantidad:</label>
-<input type="number">
+<p>
+<label for="categoria">Categoría:</label><br>
+<select id="categoria" name="categoria" required>
+<option value="">Selecciona una categoría</option>
+<option value="electronica">Electrónica</option>
+<option value="ropa">Ropa</option>
+<option value="alimentos">Alimentos</option>
+<option value="otros">Otros</option>
+</select>
+</p>
 
-<br><br>
+<p>
+<label for="descripcion">Descripción:</label><br>
+<textarea id="descripcion" name="descripcion" rows="4" cols="40"></textarea>
+</p>
 
-<button>Registrar producto</button>
+<p>
+<label for="precio">Precio:</label><br>
+<input type="number" id="precio" name="precio" min="0" step="0.01" required>
+</p>
 
+<p>
+<label for="cantidad">Cantidad disponible:</label><br>
+<input type="number" id="cantidad" name="cantidad" min="0" step="1" required>
+</p>
+
+<p>
+<label for="fecha">Fecha de registro:</label><br>
+<input type="date" id="fecha" name="fecha" required>
+</p>
+
+<button type="submit">Registrar producto</button>
+</form>
+</section>
+
+<section>
 <h2>Listado de productos</h2>
 
 <table border="1">
+<thead>
 <tr>
+<th scope="col">Código</th>
 <th>Producto</th>
+<th>Categoría</th>
+<th>Precio</th>
 <th>Cantidad</th>
 </tr>
+</thead>
+<tbody>
 
 <tr>
+<td>TEC-001</td>
 <td>Computador</td>
+<td>Electrónica</td>
+<td>850.00</td>
 <td>10</td>
 </tr>
 
 <tr>
+<td>TEC-002</td>
 <td>Mouse</td>
+<td>Electrónica</td>
+<td>15.50</td>
 <td>20</td>
 </tr>
+</tbody>
 </table>
+</section>
+</main>
 
 </body>
 </html>
