@@ -1,44 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>Inventario de Tienda</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de inventario y clientes</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/clientes.js" defer></script>
 </head>
 <body>
+  <main class="contenedor">
+    <header class="encabezado">
+      <p class="etiqueta">Gestión de tienda</p>
+      <h1>Sistema de inventario</h1>
+    </header>
 
-<h1>Sistema de Inventario</h1>
+    <section class="panel" aria-labelledby="titulo-clientes">
+      <div class="titulo-seccion">
+        <div>
+          <p class="etiqueta">Módulo de clientes</p>
+          <h2 id="titulo-clientes">Registrar cliente</h2>
+        </div>
+      </div>
 
-<h2>Registro de productos</h2>
+      <form id="formulario-cliente">
+        <div class="campos">
+          <div class="campo">
+            <label for="identificacion">Identificación</label>
+            <input id="identificacion" name="identificacion" type="text" autocomplete="off" required>
+          </div>
+          <div class="campo">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" required>
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="campo campo-completo">
+            <label for="direccion">Dirección</label>
+            <input id="direccion" name="direccion" type="text" autocomplete="street-address" required>
+          </div>
+        </div>
+        <div class="acciones">
+          <button type="submit">Registrar cliente</button>
+          <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
 
-<label>Nombre del producto:</label>
-<input type="text">
+    <section class="panel" aria-labelledby="titulo-listado-clientes">
+      <div class="titulo-seccion">
+        <div>
+          <p class="etiqueta">Directorio</p>
+          <h2 id="titulo-listado-clientes">Clientes registrados</h2>
+        </div>
+        <span id="total-clientes" class="contador">0 clientes</span>
+      </div>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Identificación</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Dirección</th>
+            </tr>
+          </thead>
+          <tbody id="lista-clientes">
+            <tr class="fila-vacia">
+              <td colspan="5">Todavía no hay clientes registrados.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-<br><br>
-
-<label>Cantidad:</label>
-<input type="number">
-
-<br><br>
-
-<button>Registrar producto</button>
-
-<h2>Listado de productos</h2>
-
-<table border="1">
-<tr>
-<th>Producto</th>
-<th>Cantidad</th>
-</tr>
-
-<tr>
-<td>Computador</td>
-<td>10</td>
-</tr>
-
-<tr>
-<td>Mouse</td>
-<td>20</td>
-</tr>
-</table>
-
+    <section class="panel" aria-labelledby="titulo-productos">
+      <div class="titulo-seccion">
+        <div>
+          <p class="etiqueta">Inventario</p>
+          <h2 id="titulo-productos">Productos registrados</h2>
+        </div>
+      </div>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Computador</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>Mouse</td>
+              <td>20</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
